@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="./script.js" defer></script>
+    <title>Weather</title>
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="logo-container">
+                <img src="./weather.png" alt="Logo" style="width: 120px;">
+            </div>
+            <form class="form">
+                <input type="text" spellcheck="false" placeholder="Cerca Città" id="city" name="city">
+                <button class="form-btn" type="submit"><img src="./search.png" alt=""></button>
+            </form>
+        </div>
+        <nav class="choose-date">
+            <a href="#" class="today">Oggi</a>
+            <a href="#" class="hours">Orario</a>
+            <a href="#" class="ten-days">10 Giorni</a>
+            <a href="#" class="week-end">Week end</a>
+            <a href="#" class="monthly">Mensile</a>
+        </nav>
+        <div class="container">
+            <div class="location">
+                <h2 class="location-timezone"></h2>
+                <div>
+                    <img class="location-icon" src="" alt="">
+                </div>
+            </div>
+            <h3 class="weather"></h3>
+            <div class="temperature">
+                <div class="temperature__section">
+                    <h2 class="temperature__section-degree">--</h2>
+                    <span>°C</span>
+                </div>
+                <div class="temperature__section">
+                    <p>Min &nbsp</p>
+                    <p class="temperature__section-degree-min"></p>
+                    <p> &nbsp °C</p>
+                </div>
+                <div class="temperature__section">
+                    <p>Max &nbsp</p>
+                    <p class="temperature__section-degree-max"></p>
+                    <p> &nbsp °C</p>
+                </div>
+                <div class="temperature__umidity"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

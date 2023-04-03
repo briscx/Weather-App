@@ -17,7 +17,7 @@ let lang = (navigator.language).substring(0, 2);
 const KELVIN_DEGREES = 273.15
 
 if (navigator.geolocation && input.value === '') {
-    console.log(input.value);
+    //console.log(input.value);
     navigator.geolocation.getCurrentPosition((position) => {
         lng = position.coords.longitude;
         lat = position.coords.latitude;
@@ -26,14 +26,12 @@ if (navigator.geolocation && input.value === '') {
     });
 }
 
-
 form.addEventListener('submit', e => {
     e.preventDefault();
     let city = input.value;
     const api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=93d38192b6981451a1f4bd494daf32ba&lang=${lang}`;
     getData(api)
 })
-
 
 function getData(url) {
     fetch(url)
@@ -44,7 +42,6 @@ function getData(url) {
             setData(data)
         });
 }
-
 
 function setData(data) {
     const { name, weather, main } = data;

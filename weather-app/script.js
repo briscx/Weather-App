@@ -16,6 +16,9 @@ let lang = (navigator.language).substring(0, 2);
 
 const KELVIN_DEGREES = 273.15
 
+const today = new Date();
+
+
 if (navigator.geolocation && input.value === '') {
     //console.log(input.value);
     navigator.geolocation.getCurrentPosition((position) => {
@@ -31,6 +34,21 @@ form.addEventListener('submit', e => {
     let city = input.value;
     const api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=93d38192b6981451a1f4bd494daf32ba&lang=${lang}`;
     getData(api)
+
+function formatDate(date, format) {
+    const map = {
+        mm: date.getMonth() + 1,
+        dd: date.getDate(),
+        yy: date.getFullYear().toString().slice(-2),
+        yyyy: date.getFullYear()
+    }
+
+    return format.replace(/mm|dd|yy|yyy/gi, matched => map[matched])
+
+}
+
+formatDate(today, 'mm/dd/yy')
+document.querySelector(".currentDate").innerHTML = today;
 })
 
 function getData(url) {
@@ -58,3 +76,19 @@ function setData(data) {
 function convertTemp(temp, toFixed = 0) {
     return parseFloat(temp - KELVIN_DEGREES).toFixed(toFixed);
 }
+
+/*function formatDate(date, format) {
+    const map = {
+        mm: date.getMonth() + 1,
+        dd: date.getDate(),
+        yy: date.getFullYear().toString().slice(-2),
+        yyyy: date.getFullYear()
+    }
+
+    return format.replace(/mm|dd|yy|yyy/gi, matched => map[matched])
+
+}
+
+formatDate(today, 'mm/dd/yy')
+document.querySelector(".currentDate").innerHTML = today;
+*/

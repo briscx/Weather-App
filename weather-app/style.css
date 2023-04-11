@@ -47,16 +47,15 @@ body {
 .choose-date {
     width: 100%;
     margin-top: 20px;
-}
-
-.btn {
     display: flex;
     justify-content: space-between;
+}
+
+a {
     font-size: 20px;
     margin: 0 50px;
     color: white;
     text-decoration: none;
-    background: linear-gradient(#113a8b,#42a7c3);
 }
 
 .container {
